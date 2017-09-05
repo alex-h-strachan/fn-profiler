@@ -11,7 +11,8 @@ const clear = () => {
   willClear = true;
 }
 
-module.exports = (fn, name, opts) => (...args) => {
+module.exports = (fn, providedName = '', opts = {}) => (...args) => {
+  const name = providedName || fn.name;
   clear(); // always make sure the tickRuns will be cleared
   tickRuns[name] = (tickRuns[name] || 0) + 1
   const st = new Date().getTime();

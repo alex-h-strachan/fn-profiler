@@ -9,6 +9,9 @@ const myFn = () => {};
 // your code to run the profiler
 const profile = require('fn-profiler');
 const myFn = profile(() => {});
+
+// optionally
+const myFn = profile(() => {}, 'Human Friendly Name', {maxConsolesPerTick: 1});
 ```
 
 # Planned improvements
